@@ -1,0 +1,64 @@
+Bài 1.4.6. Phân tích bậc tăng của thời gian chạy
+
+Yêu cầu
+Cho biết bậc tăng của thời gian chạy theo N của các đoạn code sau.
+
+Câu a
+int sum = 0;
+for (int n = N; n > 0; n /= 2)
+    for (int i = 0; i < n; i++)
+        sum++;
+
+Phân tích
+Ở vòng lặp ngoài, n lần lượt nhận các giá trị gần như:
+N, N/2, N/4, N/8, ...
+Với mỗi giá trị n, vòng lặp trong chạy đúng n lần.
+Vì vậy tổng số lần thực hiện sum++ là:
+N + N/2 + N/4 + N/8 + ...
+Đây là một cấp số nhân. Tổng của nó nhỏ hơn 2N.
+Do đó số phép toán tăng tuyến tính theo N.
+
+Kết luận câu a:
+Theta(N)
+
+Câu b
+int sum = 0;
+for (int i = 1; i < N; i *= 2)
+    for (int j = 0; j < i; j++)
+        sum++;
+
+Phân tích
+Biến i lần lượt nhận các giá trị:
+1, 2, 4, 8, 16, ...
+Ở mỗi vòng lặp ngoài, vòng lặp trong chạy i lần.
+Vì vậy tổng số lần thực hiện sum++ là:
+1 + 2 + 4 + 8 + ... + giá trị lớn nhất nhỏ hơn N
+Tổng này nhỏ hơn 2N và cùng bậc với N.
+
+Kết luận câu b:
+Theta(N)
+
+Câu c
+int sum = 0;
+for (int i = 1; i < N; i *= 2)
+    for (int j = 0; j < N; j++)
+        sum++;
+
+Phân tích
+Vòng lặp ngoài có:
+i = 1, 2, 4, 8, ...
+Mỗi lần i được nhân đôi, nên số vòng lặp ngoài xấp xỉ log2(N).
+Với mỗi lần của vòng lặp ngoài, vòng lặp trong luôn chạy N lần.
+Do đó tổng số lần thực hiện sum++ xấp xỉ:
+N * log2(N)
+
+Kết luận câu c:
+Theta(N log N)
+
+
+Kết luận chung
+a) Theta(N)
+b) Theta(N)
+c) Theta(N log N)
+
+Điểm cần nhớ là không thể chỉ nhìn thấy hai vòng for rồi kết luận ngay là Theta(N^2). Cần xem số lần lặp thực tế của từng vòng.

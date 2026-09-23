@@ -1,0 +1,47 @@
+Bài 1.4.5 - Phép xấp xỉ
+
+a. N + 1
+Khi N rất lớn, 1 không đáng kể so với N nên:
+N + 1 ~ N
+Kết quả: N
+
+b. 1 + 1/N
+Khi N rất lớn thì 1/N -> 0 nên:
+1 + 1/N ~ 1
+Kết quả: 1
+
+c. (1 + 1/N)(1 + 2/N)
+Khai triển:
+= 1 + 3/N + 2/N^2
+Khi N rất lớn, 3/N -> 0 và 2/N^2 -> 0 nên:
+(1 + 1/N)(1 + 2/N) ~ 1
+Kết quả: 1
+
+d. 2N^3 - 15N^2 + N
+Số hạng bậc cao nhất là 2N^3 nên:
+2N^3 - 15N^2 + N ~ 2N^3
+Kết quả: 2N^3
+
+e. lg(2N) / lgN
+Ta có:
+lg(2N) = lg2 + lgN
+Suy ra:
+lg(2N) / lgN = 1 + lg2/lgN
+Khi N rất lớn, lg2/lgN -> 0 nên:
+lg(2N) / lgN ~ 1
+Kết quả: 1
+
+f. lg(N^2 + 1) / lgN
+Khi N rất lớn:
+N^2 + 1 ~ N^2
+Nên:
+lg(N^2 + 1) / lgN ~ lg(N^2) / lgN = 2
+Kết quả: 2
+
+g. N^100 / 2^N
+N^100 là hàm đa thức, còn 2^N là hàm mũ.
+Khi N tăng rất lớn, hàm mũ 2^N tăng nhanh hơn mọi hàm
+đa thức N^k, kể cả N^100.
+2^N tăng nhanh hơn N^100 nên khi N rất lớn:
+N^100 / 2^N -> 0
+Kết quả: 0
